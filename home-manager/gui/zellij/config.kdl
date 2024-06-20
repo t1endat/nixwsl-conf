@@ -1,0 +1,30 @@
+theme "catppuccin-mocha"
+
+// minimal look
+// default_layout "compact"
+default_layout "minimal"
+default_shell "nu"
+pane_frames false
+mouse_mode false
+ui {
+    pane_frames {
+        hide_session_name true
+    }
+}
+
+// remap some keys prevent override from zellij 
+keybinds {
+    normal clear-defaults=true {
+        bind "Ctrl n" { NewPane; }
+        bind "Ctrl f" { ToggleFocusFullscreen; }
+        bind "Ctrl s" { SwitchToMode "Scroll"; }
+        bind "Ctrl q" { CloseFocus; }
+
+        bind "Ctrl h" { MoveFocus "Left"; }
+        bind "Ctrl j" { MoveFocus "Down"; }
+        bind "Ctrl k" { MoveFocus "Up"; }
+        bind "Ctrl l" { MoveFocus "Right"; }
+    }
+}
+
+
