@@ -1,4 +1,6 @@
 { pkgs, inputs, ... }: {
+  imports = [ ./docker.nix ];
+
   environment = {
     sessionVariables = {
       # source: https://github.com/vimjoyer/nix-helper-video?tab=readme-ov-file#defining-flake
@@ -20,4 +22,6 @@
     # Deduplicate and optimize nix store
     auto-optimise-store = true;
   };
+
+  users.users.nixos.extraGroups = [ "docker" ];
 }
